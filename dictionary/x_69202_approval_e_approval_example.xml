@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Approval Example" max_length="40" name="x_69202_approval_e_approval_example" type="collection">
+        <element label="Date of Expectation" max_length="40" name="date_of_expectation" type="glide_date_time"/>
+        <element label="Location" max_length="32" name="location" reference="u_listcity" type="reference"/>
+        <element label="Name of the User" max_length="32" name="name_of_the_user" reference="sys_user" type="reference"/>
+        <element choice="3" default="Work in Progress" label="State" max_length="40" name="state" read_only="true" type="string">
+            <choice>
+                <element label="Approved" value="Approved"/>
+                <element label="Rejected" value="Rejected"/>
+                <element label="Submitted" value="Submitted"/>
+                <element label="Work in Progress" value="Work in Progress"/>
+            </choice>
+        </element>
+        <element label="Submitter Details" max_length="40" name="user_details" type="string"/>
+        <index name="index">
+            <element name="name_of_the_user"/>
+        </index>
+        <index name="index2">
+            <element name="location"/>
+        </index>
+    </element>
+</database>
